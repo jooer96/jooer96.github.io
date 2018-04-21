@@ -1,126 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        
+        <title>Student Grade Manager </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>واتسابي</title>
-    <!-- Font Awesome -->
-    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
-    <link href="src/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="src/css/mdb.min.css" rel="stylesheet">
-    
-    
-    
-    
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6724310430643321",
-    enable_page_level_ads: true
-  });
-</script>
-    
-    
-    
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93804491-1"></script>
- <script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
- 
-   gtag('config', 'UA-93804491-1');
- </script>
+    <body>        
+    <center>
 
-</head>
-<style> 
-a{
-    color: white;
-}
-.btn1 {
-    font-size: .8rem;
-     padding: 3;
-    /* margin: 6px; */
-    border-radius: 2px;
-    border: 0;
-    webkit-transition: .2s ease-out; 
-    transition: .2s ease-out; 
-    white-space: normal!important;
-    cursor: pointer; 
-}
-</style>
-<script >
-        function myFunction() {
-            var phonenumber = prompt("ادخل رقم الهاتف مع رمز الدولة بدون علامة ال+ او صفر قبل بداية الرقم، مثال رقم من السعودية: 966500000000 ", "");
-            if (phonenumber != null) {
-              window.location.href = "https://api.whatsapp.com/send?phone="+phonenumber
-            }
-          }
-           function myFunctionOne() {
-             var phonenumber = prompt("ادخل رقم الهاتف مع رمز الدولة بدون علامة ال+ او صفر قبل بداية الرقم، مثال رقم من السعودية: 966500000000 ", "");
-             if (phonenumber != null) {
-               document.getElementById("demo").src = "https://is.gd/create.php?format=simple&url=https://api.whatsapp.com/send?phone="+phonenumber
-            }}
-        </script>
-<body>
-
-    <!-- Start your project here-->
-    <div style="height: 100vh">
-        <br>
-        <div class="card success-color text-center z-depth-2">
-            <div class="card-body">
-                    <h1 class="white-text mb-0">.واتسابي</h1>
-                    <br>
-                <p class="white-text mb-0">
-                    واتسابي - هي خدمة تمكنك من التحدث السريع مع اي رقم دون ضروره حفظ رقمه بجهات الاتصال ، ويمكنك ايضا انشاء رابط مباشر لرقمك لمشاركته مع الاخرين </p>
-                 <br>
-                    <button type="button" onclick="myFunctionOne()" class="btn1 btn-indigo">
-                            <i class="em em-link"></i>
-                        نشئ رابط مباشر
-                    </button>
-                    <button type="button" onclick="myFunction()" class="btn1 btn-blue-grey">
-                            <i class="em em-zap"></i>
-                            المحادثه السريعه
-                    </button>
+     <div class="p-3 mb-2 bg-info text-white">
+            <fieldset style="width:600px">
+                <legend><b>  Sudent Grade Manager </b></legend>   
+                Student Name:<input type="text" id="txtName">   
+                Student ID :<input type="text" id="txtClass"> <br/><br/>
+               
+                <table class="table table-striped" border="1">
+                    <tr> <td>Quziez</td> <td><input type="text" id="Quziez"></td>  </tr>
+                    <tr><td>Medterm</td><td><input type="text" id="Medterm"></td></tr>
+                    <tr><td>Lab</td><td><input type="text" id="Lab"></td></tr>
+                    <tr><td>FinalExam</td><td><input type="text" id="FinalExam"></td></tr>             
+                </table><br/><br/>
+                <button onclick="getReport" type="button" class="btn btn-lg btn-primary" > Get Result</button>
+            </fieldset>
             </div>
-    </div>
+            </center> 
 
-<br> <br>
+            <script>
+                function getReport(){
+                
+                var grade = "";  //declare a variable for grade
+                var  result="";  //declare a variable for result
+                
+                //read the marks
+                var QuiMarks = document.getElementById('Quziez').value;
+                var MedMarks = document.getElementById('Medterm').value;
+                var LabMarks = document.getElementById('Lab').value;
+                var FinMarks = document.getElementById('FinalExam').value;
+                
+                //calculate the total marks (using double notation technique)
+                 var totalMarks = QuiMarks + MedMarks + LabMarks + FinMarks ;
+            
 
-    <div class="card success-color text-center z-depth-2">
-            <div class="card-body">
-                    <button type="button" href="https://paypal.me/jooer" class="btn1 btn-yellow">
-                          
-                          <a href="https://paypal.me/jooer" > DonateME! <i class="em em-black_heart"></i> </a>  
-                    </button> <button type="button" class="btn1 btn-elegant">
-                            <a href="mailto:i@jarallah.me" >EmailMe? <i class="em em-email"></i> </a>    
-                        </button>
+
+                //find the grade and result using the ternary operator inside the switch statement                  
+                switch(
                     
+                        //usage of ternary operator inside switch
+                
+                        (totalMarks > 90 && totalMarks <= 100) ? 1 : 
+                        (totalMarks > 79 && totalMarks <= 89) ? 2 : 
+                        (totalMarks > 69 && totalMarks <= 79) ? 3 : 
+                        (totalMarks > 59 && totalMarks <= 69) ? 4 : 
+                        (totalMarks > 0 && totalMarks < 59 ) ?  0 :
+                      )
+                        
+                        {
+                            case 1 :grade = "A";result="First Class";break;
+                            case 2 :grade = "B"; result="Second Class";break;
+                            case 3 :grade = "C"; result="Third Class";break;
+                            case 4 :grade = "D"; result="About Fail ";break;
+                            case 0 :grade = "F"; result="Fail";break;
+                        }
+                        
+                    
+                //display the results   
+                document.getElementById('txtStudentName').value = document.getElementById('txtName').value;
+                document.getElementById('txtStudentClass').value = document.getElementById('txtClass').value;
+                document.getElementById('txtTotalMarks').value = totalMarks;
+                document.getElementById('txtGrade').value = grade;
+                document.getElementById('txtResult').value = result;
+                
+                } //end of function getReport
+
+                        </script> 
+<br> <br> <br> <br>  
+     <div class="p-3 mb-2 bg-warning text-dark">
+     <center>
+            <h2> Student Grade  </h2>
+            
+            <table style="width:600px" class="table table-striped" >
+                <tr><td>Name</td><td><input type="text" id="txtStudentName" readonly></td></tr>
+                <tr><td>id</td><td><input type="text" id="txtStudentClass" readonly></td></tr>
+                <tr><td>Total Marks</td><td><input type="text" id="txtTotalMarks" readonly></td></tr>
+                <tr><td>Grade</td><td><input type="text" id="txtGrade" readonly></td></tr>
+                <tr><td>Remarks</td><td><input type="text" id="txtResult" readonly></td></tr>
+            </table>
+            </center>
             </div>
-    </div>
-
-
-
-    <!-- /Start your project here-->
-
-
-
-
-    <!-- SCRIPTS -->
-    <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-</body>
-
+    </body>
 </html>
+
