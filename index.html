@@ -1,92 +1,16 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Student Grade Manager </title>
+        <title> Ayar Studio </title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     </head>
-
     <body>        
-    <center>
-
-     <div class="p-3 mb-2 bg-info text-white">
-            <fieldset >
-                <legend><b>  Sudent Grade Manager </b></legend>   
-                Student Name:<input type="text" id="txtName">   
-                Student ID :<input type="text" id="txtClass"> <br/><br/>
-               
-                <table class="table table-striped" >
-                    <tr> <td>Quziez</td> <td><input type="text" id="Quziez"></td>  </tr>
-                    <tr><td>Medterm</td><td><input type="text" id="Medterm"></td></tr>
-                    <tr><td>Lab</td><td><input type="text" id="Lab"></td></tr>
-                    <tr><td>FinalExam</td><td><input type="text" id="FinalExam"></td></tr>             
-                </table><br/><br/>
-                <button onclick="getReport" type="button" class="btn btn-lg btn-primary" > Get Result</button>
-            </fieldset>
-            </div>
-            </center> 
-
-            <script>
-                function getReport(){
-                
-                var grade = "";  //declare a variable for grade
-                var  result="";  //declare a variable for result
-                
-                //read the marks
-                var QuiMarks = document.getElementById('Quziez').value;
-                var MedMarks = document.getElementById('Medterm').value;
-                var LabMarks = document.getElementById('Lab').value;
-                var FinMarks = document.getElementById('FinalExam').value;
-                
-                //calculate the total marks (using double notation technique)
-                 var totalMarks = QuiMarks + MedMarks + LabMarks + FinMarks ;
-            
-
-
-                //find the grade and result using the ternary operator inside the switch statement                  
-                switch(
-                    
-                        //usage of ternary operator inside switch
-                
-                        (totalMarks > 90 && totalMarks <= 100) ? 1 : 
-                        (totalMarks > 79 && totalMarks <= 89) ? 2 : 
-                        (totalMarks > 69 && totalMarks <= 79) ? 3 : 
-                        (totalMarks > 59 && totalMarks <= 69) ? 4 : 
-                        (totalMarks > 0 && totalMarks < 59 ) ?  0 :
-                      )
-                        
-                        {
-                            case 1 :grade = "A";result="First Class";break;
-                            case 2 :grade = "B"; result="Second Class";break;
-                            case 3 :grade = "C"; result="Third Class";break;
-                            case 4 :grade = "D"; result="About Fail ";break;
-                            case 0 :grade = "F"; result="Fail";break;
-                        }
-                        
-                    
-                //display the results   
-                document.getElementById('txtStudentName').value = document.getElementById('txtName').value;
-                document.getElementById('txtStudentClass').value = document.getElementById('txtClass').value;
-                document.getElementById('txtTotalMarks').value = totalMarks;
-                document.getElementById('txtGrade').value = grade;
-                document.getElementById('txtResult').value = result;
-                
-                } //end of function getReport
-
-                        </script> 
-<br> <br> <br> <br>  
-     <div class="p-3 mb-2 bg-warning text-dark">
-     <center>
-            <h2> Student Grade  </h2>
-            
-            <table  class="table table-striped" >
-                <tr><td>Name</td><td><input type="text" id="txtStudentName" readonly></td></tr>
-                <tr><td>id</td><td><input type="text" id="txtStudentClass" readonly></td></tr>
-                <tr><td>Total Marks</td><td><input type="text" id="txtTotalMarks" readonly></td></tr>
-                <tr><td>Grade</td><td><input type="text" id="txtGrade" readonly></td></tr>
-                <tr><td>Remarks</td><td><input type="text" id="txtResult" readonly></td></tr>
-            </table>
-            </center>
-            </div>
+ 
+        
+        
+        
+        
+        
     </body>
 </html>
 
